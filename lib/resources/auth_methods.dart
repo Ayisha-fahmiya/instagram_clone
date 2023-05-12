@@ -1,7 +1,6 @@
 import 'dart:typed_data';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
 import 'package:instagram_clone/models/user_model.dart' as model;
 import 'package:instagram_clone/resources/storage_methods.dart';
 
@@ -31,6 +30,7 @@ class AuthMethods {
           password.isNotEmpty ||
           userName.isNotEmpty ||
           bio.isNotEmpty ||
+          // ignore: unnecessary_null_comparison
           file != null) {
         // register
         UserCredential credential = await _auth.createUserWithEmailAndPassword(
